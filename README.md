@@ -37,6 +37,14 @@ It dynamically changes its **character, tone, emotion, and background visuals** 
 - 🌐 CORS-enabled REST API
 
 ---
+Key Features:
+
+1.Custom anime AI persona integrated using OpenAI API
+2.Real-time conversational UI
+3.Clean dark theme and anime-style design
+4.Message history & context retention
+5.Secure backend with Express & MongoDB
+6.Future scope: voice chatting, character presets, custom avatars
 
 ## 🚀 Getting Started
 
