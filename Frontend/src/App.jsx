@@ -6,11 +6,11 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [character, setCharacter] = useState("gojo");
   const [bgImage, setBgImage] = useState("");
-  const [isActive, setIsActive] = useState(false); // 👈 for glow pulse
+  const [isActive, setIsActive] = useState(false); 
 
-  // ✅ Reset chat + background when character changes
+  
   useEffect(() => {
-    setMessages([]); // clear old chat
+    setMessages([]); 
 
     const basePath = "/character/";
 
@@ -23,7 +23,7 @@ function App() {
     setBgImage(defaultImages[character] || `${basePath}default.jpg`);
   }, [character]);
 
-  // ✅ Update background dynamically based on chat emotion
+  
   useEffect(() => {
     const basePath = "/character/";
 
@@ -70,20 +70,21 @@ function App() {
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    setMessages((prev) => [...prev, { sender: "You", text: input }]);
+    const userMessage = input;
+    setMessages((prev) => [...prev, { sender: "You", text: userMessage }]);
     setInput("");
-    setIsActive(true); // ✨ trigger glow pulse
-    setTimeout(() => setIsActive(false), 1000); // reset glow after 1s
+    setIsActive(true); 
+    setTimeout(() => setIsActive(false), 1000); 
 
     try {
-      const res = await fetch("http://localhost:5000/chat", {
+      const res = await fetch("https://aionx-anime-ai-advanced-chatbot1.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input, character }),
       });
 
       const data = await res.json();
-      setMessages((prev) => [...prev, { sender: character, text: data.reply }]);
+      setMessages((prev) => [...prev, { sender: character, text: data.reply || "No response received." }]);
     } catch (err) {
       console.error("Chat API error:", err);
       setMessages((prev) => [
@@ -93,7 +94,7 @@ function App() {
     }
   };
 
-  // ✅ Reset chat manually
+  
   const handleReset = () => {
     setMessages([]);
     const basePath = "/character/";
