@@ -15,26 +15,13 @@ body, html {
   color: #fff;
 }
 
-/*.chat-box {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 20px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 500px;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-}*/
-
 .chat-box {
   background: rgba(0, 0, 0, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  transition: all 0.5s ease-in-out; /* smooth animation when character changes */
+  transition: all 0.5s ease-in-out; 
   width: 90%;
   max-width: 500px;
   height: 80vh;
@@ -54,8 +41,6 @@ body, html {
   100% { box-shadow: 0 0 25px rgba(255,255,255,0.3); }
 }
 
-
-/* Character-based dynamic glow themes */
 .chat-box.gojo {
   background: rgba(0, 100, 255, 0.3);
   border: 1px solid rgba(0, 150, 255, 0.5);
@@ -111,7 +96,7 @@ body, html {
 
 .message.bot {
   text-align: left;
-  color: #ffeaa7;
+  color: #726848;
 }
 
 .input-area {
@@ -141,7 +126,6 @@ body, html {
   background-color: #0984e3;
 }
 
-/* 📱 Mobile responsive */
 @media (max-width: 600px) {
   .chat-box {
     height: 90vh;
