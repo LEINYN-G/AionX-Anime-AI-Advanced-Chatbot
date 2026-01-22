@@ -77,10 +77,10 @@ function App() {
     setTimeout(() => setIsActive(false), 1000); 
 
     try {
-      const res = await fetch("https://aionx-anime-ai-advanced-chatbot1.onrender.com", {
+      const res = await fetch("https://backend-two-alpha-48.vercel.app/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input, character }),
+        body: JSON.stringify({ message: userMessage, character }),
       });
 
       const data = await res.json();
